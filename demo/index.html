@@ -1,0 +1,291 @@
+<!DOCTYPE HTML>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viviscim</title>
+    <link rel="icon" type="image/png" href="logoViviscimfavicon.png" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.4/build/pannellum.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.4/build/pannellum.js"></script>
+</head>
+
+<style>
+html {
+  height: 100%;
+  margin: 0px;
+}
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+}
+
+img {
+  height: 100%;
+}
+
+#panorama {
+    width: 100%;
+    height: 100%;
+}
+
+.custom-hotspot {
+        height: 300px;
+        width: 300px;
+        background: #031520;
+        border-radius: 50%;
+}
+
+
+.image-exemple {
+  height: 100px; !important
+}
+
+</style>
+
+<body >
+
+<embed name="GoodEnough" src="DON PASQUALE - Gaetano Donizetti - Don Pasquale - Ouverture 19 02 22.mp3" loop="true" hidden="true" autostart="true">
+
+
+<div id="panorama"></div>
+<script>
+pannellum.viewer('panorama', {
+    "default": {
+        "firstScene": "Don pasquale, Donizetti - Plateau",
+        "author": "Viviscim",
+        "sceneFadeDuration": 1000,
+        "authorURL":"http://viviscim.com/"
+    },
+
+    "scenes": {
+            //scene "Plateau"
+            "Don pasquale, Donizetti - Plateau": {
+            "panorama": "https://i.imgur.com/JVcOdUu.jpg",
+            "title": "Don pasquale, Donizetti - Virtual Tour",
+            "hfov": 110, //zoom out
+            "pitch": -3, //starting position vertical
+            "yaw": 117, // starting position horizontal
+            "type": "equirectangular",
+            "preview": "preview-index.png",
+            "autoLoad": true,
+            "showZoomCtrl" : false,
+            "showFullscreenCtrl" : false,
+
+            "hotSpots": [
+              { //white round on the ground + Viviscim's logo
+                  "pitch": -90,
+                  "yaw": 1.5,
+                  "cssClass": "custom-hotspot",
+                  "createTooltipFunc": hotspot,
+                  "createTooltipArgs": ""
+              },
+
+              { // - link to Pano-exterieur-1
+                  "pitch": -3,
+                  "yaw": 24,
+                  "type": "scene",
+                  "text": "Don pasquale, Donizetti - Pano-exterieur-1",
+                  "sceneId": "Don pasquale, Donizetti - Pano-exterieur-1"
+              },
+
+              {  // - link to Pano-exterieur-2
+                  "pitch": -3,
+                  "yaw": -30,
+                  "type": "scene",
+                  "text": "Don pasquale, Donizetti - Pano-exterieur-2",
+                  "sceneId": "Don pasquale, Donizetti - Pano-exterieur-2"
+              },
+
+              { // - text The tent
+                  "pitch": -3,
+                  "yaw": 117,
+                  "type": "info",
+                  "text": "<h4 > The tent : </h4> <p> The home of Ernesto, a depressed young man who pitched a tent in his uncle Don Pasquale\'s house. He must deal with his uncle\'s authority and his remaining small freedoms... </p> ",
+              },
+
+              { // - text The tent
+                  "pitch": -8,
+                  "yaw": 116,
+                  "type": "info",
+                  "text": "<h4 > The tent : </h4> <p> The tent, a nomadic and unstable habitat, is a prison for this young man who would gladly be released with the help of Malatesta and Norina.</p> ",
+              },
+
+              { // - image The tent
+                  "pitch": 0,
+                  "yaw": 87,
+                  "type": "info",
+                  "text":  " <h4> inside the tent </h4> <img style=\"width: 370px;\" src=\"interieur-tente.jpg\" alt=\"interieur-tente\" \">  ",
+              },
+
+              { // - text fish, scorpion, rhino head, otter, hanging animals UP
+                  "pitch": 40,
+                  "yaw": 7,
+                  "type": "info",
+                  "text": "<h4> Vertical fish, scorpion, rhino head, otter, hanging animals</h4> <p> Coming neither from the past nor the future, these funny creatures made by Andrea Cozzi and Marie Janssen furnish Don Pasquale's strange cabinet of curiosity. </p> ",
+              },
+
+              { // - text fish, scorpion, rhino head, otter, hanging animals DOWN
+                  "pitch": 10,
+                  "yaw": -15,
+                  "type": "info",
+                  "text": "<p>\" I wanted this Don Pasquale to happen, not in the distant past, but in our present. Don Pasquale is a prisoner of his past: he has built a little world of his own, a sort of \"cabinet of curiosities\" with a whole personal microcosm from which he can control everything in a neurotic way. But in the real world he is surrounded by modern characters .... \" </p> <h4 > Valentin Schwarz, director</h4>",
+              },
+
+              { // - image detail-bookshelf
+                  "pitch": -10,
+                  "yaw": 0,
+                  "type": "info",
+                  "text":  " <h4> Detail of the bookshelf </h4> <img style=\"width: 370px;\" src=\"details-loutre.jpg\" alt=\"Detail of the bookshelf \" \">  ",
+              },
+
+              { // - image Gaetano Donizetti
+                  "pitch": -20,
+                  "yaw": 160,
+                  "type": "info",
+                  "text":  " <h4> Don Pasquale Opera buffa by Gaetano Donizetti - 3 January 1843 Théâtre-Italien, Paris</h4> <img classe=\"image-exemple\" src=\"Luigi_Lablache_in_Don_Pasquale.jpeg\" alt=\"franklin\" \">  ",
+
+              },
+              { // - Montpellier: l'Opéra comédie ouvre ses coulisses aux malvoyants.
+                  "pitch": -20,
+                  "yaw": 200,
+                  "type": "info",
+                  "text":  " <iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/BFdalkmCBR4\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture \" allowfullscreen> </iframe> <h4 style= \"width: 560px;\">The stage open for the visually impaired.</h4>",
+
+              },
+
+            ]
+
+        },
+
+        //scene "Pano-ext-1"
+        "Don pasquale, Donizetti - Pano-exterieur-1": {
+            "panorama": "https://i.imgur.com/944DH8G.jpg", //light
+            "title": "Don pasquale, Donizetti - Pano-exterieur-1",
+            "hfov": 190, //zoom out
+            "pitch": -3, //starting position vertical
+            "yaw": -37, // starting position horizontal
+            "type": "equirectangular",
+            "preview": "preview-index.png",
+            "autoLoad": true,
+            "showZoomCtrl" : false,
+            "showFullscreenCtrl" : false,
+
+            "hotSpots": [
+              { //white round on the ground + viviscim's logo
+                  "pitch": -90,
+                  "yaw": 1.5,
+                  "cssClass": "custom-hotspot",
+                  "createTooltipFunc": hotspot,
+                  "createTooltipArgs": ""
+              },
+
+              { // - link to Plateau
+                  "pitch": -17,
+                  "yaw": -44,
+                  "type": "scene",
+                  "text": "Don pasquale, Donizetti - Plateau",
+                  "sceneId": "Don pasquale, Donizetti - Plateau"
+              },
+
+              {  // - link to Pano-exterieur-2
+                  "pitch": -17,
+                  "yaw": 0,
+                  "type": "scene",
+                  "text": "Don pasquale, Donizetti - Pano-exterieur-2",
+                  "sceneId": "Don pasquale, Donizetti - Pano-exterieur-2"
+              },
+
+              { // - image decors amovible
+                  "pitch": -20,
+                  "yaw": -5,
+                  "type": "info",
+                  "text":  " <img style=\"width: 370px;\" src=\"decors-amovible.jpg\" alt=\"decors-amovible\" \"> <p> As the room moves, the removable decor is moving with light effects</p>   ",
+
+              },
+            ]
+
+
+
+        },
+
+        //scene "Pano-ext-2"
+        "Don pasquale, Donizetti - Pano-exterieur-2": {
+            "panorama": "https://i.imgur.com/TwHpIDf.jpg", //rino
+            "title": "Don pasquale, Donizetti - Pano-exterieur-2",
+            "hfov": 190, //zoom out
+            "pitch": 8, //starting position vertical
+            "yaw": 37, // starting position horizontal
+            "type": "equirectangular",
+            "preview": "preview-index.png",
+            "autoLoad": true,
+            "showZoomCtrl" : false,
+            "showFullscreenCtrl" : false,
+
+            "hotSpots": [
+              { //white round on the ground + viviscim's logo
+                  "pitch": -90,
+                  "yaw": 1.5,
+                  "cssClass": "custom-hotspot",
+                  "createTooltipFunc": hotspot,
+                  "createTooltipArgs": ""
+              },
+
+              {  // - link to Plateau
+                  "pitch": -3,
+                  "yaw": 30,
+                  "type": "scene",
+                  "text": "Don pasquale, Donizetti - Plateau",
+                  "sceneId": "Don pasquale, Donizetti - Plateau"
+              },
+              { // - link to Pano-exterieur-1
+                  "pitch": -3,
+                  "yaw": -60,
+                  "type": "scene",
+                  "text": "Don pasquale, Donizetti - Pano-exterieur-1",
+                  "sceneId": "Don pasquale, Donizetti - Pano-exterieur-1"
+              },
+              { // - Opéra national de Paris - Les métiers de l'Opéra N°8 dédié aux ateliers peinture
+                  "pitch": -3,
+                  "yaw": 117,
+                  "type": "info",
+                  "text":  " <iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/0t5LdMxwChg\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture \" allowfullscreen> </iframe> <h4 style= \"width: 560px;\">Opera Jobs: The Stage Manager</h4>",
+
+              },
+            ]
+        }
+
+
+    }
+});
+
+// Hot spot creation function - custom hotspots - round
+function hotspot(hotSpotDiv, args) {
+    hotSpotDiv.classList.add('custom-tooltip');
+    var span = document.createElement('span');
+    span.innerHTML = args;
+    hotSpotDiv.appendChild(span);
+    span.style.width = span.scrollWidth - 20 + 'px';
+    span.style.marginLeft = -(span.scrollWidth - hotSpotDiv.offsetWidth) / 2 + 'px';
+    span.style.marginTop = -span.scrollHeight - 12 + 'px';
+}
+// Hot spot creation function - custom hotspots - viviscim's logo
+function hotspot(hotSpotDiv, args) {
+  hotSpotDiv.classList.add('custom-hotspot');
+  let span = document.createElement('span');
+  let img = document.createElement('img');
+  img.src = 'logoViviscimWhite.png';
+  hotSpotDiv.appendChild(img);
+  hotSpotDiv.appendChild(span);
+}
+
+
+// clickHandlerFunc function
+function clickHandlerFunc(clickHandlerArgs, args) {
+
+}
+
+</script>
+
+</body>
+</html>

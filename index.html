@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Viviscim</title>
+    <link rel="icon" type="image/png" href="img/logoViviscimfavicon.png" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.4/build/pannellum.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.4/build/pannellum.js"></script>
+</head>
+
+<body >
+  <!-- <a href=""><h2 class="logo"><img id="logo" src="img/logoViviscimWhite.png" alt="collectif-bjorn"> collectif bjorn</h2></a>
+  <div class="titles">
+    <h1 class="bigTitle">Viviscim</h1>
+    <h2 class="smallTitle">La Visite Virtuelle Scénographique Immersive</h2>
+    <h2 class="smallTitle italic">The Immersive Scenographic Virtual Tour</h2>
+    <h2 class="smallTitle2">Ouvrez au monde entier les décors de vos spectacles en 360° et en Réalité Virtuelle</h2>
+    <h2 class="smallTitle italic">Open to the world the set designs of your show in 360° and Virtual Reality</h2>
+  </div>
+  <a href="mailto:collectifbjorn@gmail.com"><h2 class="contact">contactez-nous</h2></a>
+  <h3 class="legend">Opéra Orchestre National Montpellier | Don pasquale, Donizetti | Valentin Schwarz - Andrea Cozzi, 2019</h3> -->
+
+
+
+
+<div id="panorama"></div>
+<script>
+pannellum.viewer('panorama', {
+    "type": "equirectangular",
+    "panorama": "https://i.imgur.com/JVcOdUu.jpg",
+    "autoLoad": true,
+    "showZoomCtrl" : false,
+    "showFullscreenCtrl" : false,
+    "yaw": 130, // starting posssition horizontal
+    "pitch": -10, //starting posssition vertical
+    "hfov": 97 //zoom out
+});
+</script>
+
+</body>
+</html>
